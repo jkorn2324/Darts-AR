@@ -4,7 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ModifiedObject.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 256600f0e674c4597900cd633a3a68b8,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bd4e21ea5bad4485793b74262ef60cc0,
       type: 2}
