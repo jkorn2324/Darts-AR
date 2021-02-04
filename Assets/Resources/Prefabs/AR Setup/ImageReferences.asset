@@ -14,4 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GuidLow: 4760433373407760346
   m_GuidHigh: 1525533394019364752
-  m_Images: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5333950552286252430
+      m_GuidHigh: 1211499002059478416
+    m_SerializedTextureGuid:
+      m_GuidLow: 8373447106965813446
+      m_GuidHigh: 12597795152569036809
+    m_Size: {x: 0.5, y: 0.4407843}
+    m_SpecifySize: 1
+    m_Name: jkorn_background
+    m_Texture: {fileID: 2800000, guid: 843838c675c7743409f003fef15bd4ae, type: 3}

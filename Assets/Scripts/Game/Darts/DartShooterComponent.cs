@@ -8,9 +8,8 @@ namespace ModifiedObject.Scripts.Game
     [System.Serializable]
     public struct DartShooterReferences
     {
-
-        // TODO:
-
+        [SerializeField]
+        public Utils.References.BooleanReference foundTarget;
     }
 
     /// <summary>
@@ -19,24 +18,19 @@ namespace ModifiedObject.Scripts.Game
     public class DartShooterComponent : MonoBehaviour
     {
         [SerializeField]
-        private GameObject dartPrefab;
+        private DartShooterReferences references;
         [SerializeField]
-        private KeyCode shooterKeyCode;
-
-
-        private void Update()
-        {
-            if(Input.GetKeyDown(shooterKeyCode))
-            {
-                this.ShootDart();
-            }
-        }
+        private GameObject dartPrefab;
 
         /// <summary>
         /// Shoots the dart.
         /// </summary>
-        private void ShootDart()
+        public void ShootDart()
         {
+            if(!references.foundTarget.Value)
+            {
+                return;
+            }
             Instantiate(this.dartPrefab);
         }
     }

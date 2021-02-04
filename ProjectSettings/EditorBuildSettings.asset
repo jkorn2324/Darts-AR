@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Tests/ObjectPlacer.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/DartsScene.unity
+    guid: 8233ad492bdf842689471d30ec06d0e1
   m_configObjects:
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 256600f0e674c4597900cd633a3a68b8,
       type: 2}

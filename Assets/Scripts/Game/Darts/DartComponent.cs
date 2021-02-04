@@ -14,6 +14,8 @@ namespace ModifiedObject.Scripts.Game
         public Utils.References.Vector3Reference originalDirection;
         [SerializeField]
         public Utils.References.FloatReference originalForce;
+        [SerializeField]
+        public Utils.References.Vector3Reference targetPosition;
     }
 
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
