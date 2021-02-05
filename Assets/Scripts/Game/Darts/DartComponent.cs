@@ -18,7 +18,7 @@ namespace ModifiedObject.Scripts.Game
         public Utils.References.Vector3Reference targetPosition;
     }
 
-    [RequireComponent(typeof(Rigidbody), typeof(Collider))]
+    [RequireComponent(typeof(Rigidbody))]
     public class DartComponent : MonoBehaviour
     {
         [SerializeField]
