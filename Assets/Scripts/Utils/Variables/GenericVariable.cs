@@ -25,7 +25,7 @@ namespace ModifiedObject.Scripts.Utils.Variables
             get => this.value;
             set
             {
-                if(this.value.Equals(value))
+                if(!this.value.Equals(value))
                 {
                     this.ChangedValueEvent(value);
                 }

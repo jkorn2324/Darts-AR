@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3712734304997032085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7672708584368253798}
+  m_Layer: 8
+  m_Name: PointToTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7672708584368253798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712734304997032085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6142232134959981017}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6142232134959980998
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +60,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8440130082988660058}
+  - {fileID: 7672708584368253798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,9 +106,22 @@ MonoBehaviour:
       constantValue: 0
       variable: {fileID: 11400000, guid: b358464b81b94434d9ae8d279ef87d9b, type: 2}
     targetPosition:
-      isConstant: 1
+      isConstant: 0
       constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: 90df99041441845f0beb55e1e0a6bb64, type: 2}
+    targetRotation:
+      isConstant: 0
+      constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: 832a1029b12d4418a86bf760c1f81dbf, type: 2}
+    targetFacing:
+      isConstant: 0
+      constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: f83f78f39d516485ba2c3600112b81c5, type: 2}
+    despawnCooldownTime:
+      isConstant: 1
+      constantValue: 100
       variable: {fileID: 0}
+  pointToTrack: {fileID: 3712734304997032085}
 --- !u!1 &9109248481457917920
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +134,7 @@ GameObject:
   - component: {fileID: 4795918000516471551}
   - component: {fileID: 7307777912613072437}
   - component: {fileID: 4563115517573065305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,13 +148,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9109248481457917920}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6142232134959981017}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!33 &4795918000516471551
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2742069248401653984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4461321451704207555}
+  m_Layer: 8
+  m_Name: PointToTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4461321451704207555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742069248401653984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7758193686498068207}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &127300339239079279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43,6 +73,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5455669010727350892}
+  - {fileID: 4461321451704207555}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,9 +119,22 @@ MonoBehaviour:
       constantValue: 0
       variable: {fileID: 11400000, guid: b358464b81b94434d9ae8d279ef87d9b, type: 2}
     targetPosition:
-      isConstant: 1
+      isConstant: 0
       constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: 90df99041441845f0beb55e1e0a6bb64, type: 2}
+    targetRotation:
+      isConstant: 0
+      constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: 832a1029b12d4418a86bf760c1f81dbf, type: 2}
+    targetFacing:
+      isConstant: 0
+      constantValue: {x: 0, y: 0, z: 0}
+      variable: {fileID: 11400000, guid: f83f78f39d516485ba2c3600112b81c5, type: 2}
+    despawnCooldownTime:
+      isConstant: 1
+      constantValue: 100
       variable: {fileID: 0}
+  pointToTrack: {fileID: 2742069248401653984}
 --- !u!1001 &5493502530820232583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,7 +165,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
@@ -131,7 +175,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
@@ -146,7 +190,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7597487052e9841e28671ccb27d9dc39,
         type: 3}
@@ -162,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dart
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7597487052e9841e28671ccb27d9dc39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7597487052e9841e28671ccb27d9dc39, type: 3}

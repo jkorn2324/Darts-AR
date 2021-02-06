@@ -22,6 +22,11 @@ namespace ModifiedObject.Scripts.Utils.References
             set;
         }
 
+        public abstract bool HasVariable
+        {
+            get;
+        }
+
         public T Value
         {
             set
@@ -52,7 +57,6 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
                 this.variable.ChangedValueEvent += value;
             }
             remove
@@ -67,6 +71,9 @@ namespace ModifiedObject.Scripts.Utils.References
             get => this.variable.Value;
             set => this.variable.Value = value;
         }
+
+        public override bool HasVariable
+            => this.variable != null;
 
         public override void Reset()
         {
@@ -104,6 +111,9 @@ namespace ModifiedObject.Scripts.Utils.References
             set => this.variable.Value = value;
         }
 
+        public override bool HasVariable
+            => this.variable != null;
+
         public override void Reset()
         {
             this.variable?.Reset();
@@ -139,6 +149,9 @@ namespace ModifiedObject.Scripts.Utils.References
             get => this.variable.Value;
             set => this.variable.Value = value;
         }
+
+        public override bool HasVariable
+            => this.variable != null;
 
         public override void Reset()
         {
@@ -176,6 +189,9 @@ namespace ModifiedObject.Scripts.Utils.References
             set => this.variable.Value = value;
         }
 
+        public override bool HasVariable
+            => this.variable != null;
+
         public override void Reset()
         {
             this.variable?.Reset();
@@ -211,6 +227,9 @@ namespace ModifiedObject.Scripts.Utils.References
             get => this.variable.Value;
             set => this.variable.Value = value;
         }
+
+        public override bool HasVariable
+            => this.variable != null;
 
         public override void Reset()
         {
