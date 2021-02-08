@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c38c0de057e4875bb7b42423aac383, type: 3}
-  m_Name: Found Target
+  m_Script: {fileID: 11500000, guid: 638be42e5f04641249183fa0fe70f037, type: 3}
+  m_Name: AR Target Rotation
   m_EditorClassIdentifier: 
-  originalValue: 0
-  value: 0
+  originalValue: {x: 0, y: 0, z: 0, w: 0}
+  value: {x: 0, y: 0, z: 0, w: 0}

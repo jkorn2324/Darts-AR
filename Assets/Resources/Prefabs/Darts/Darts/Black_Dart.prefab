@@ -108,15 +108,11 @@ MonoBehaviour:
     targetPosition:
       isConstant: 0
       constantValue: {x: 0, y: 0, z: 0}
-      variable: {fileID: 11400000, guid: 90df99041441845f0beb55e1e0a6bb64, type: 2}
+      variable: {fileID: 11400000, guid: c6eb6e3ead9174b77bc52290fe6900db, type: 2}
     targetRotation:
       isConstant: 0
-      constantValue: {x: 0, y: 0, z: 0}
-      variable: {fileID: 11400000, guid: 832a1029b12d4418a86bf760c1f81dbf, type: 2}
-    targetFacing:
-      isConstant: 0
-      constantValue: {x: 0, y: 0, z: 0}
-      variable: {fileID: 11400000, guid: f83f78f39d516485ba2c3600112b81c5, type: 2}
+      constantValue: {x: 0, y: 0, z: 0, w: 0}
+      variable: {fileID: 11400000, guid: 2689ed49abdc24108acfb653c67b2cd9, type: 2}
     despawnCooldownTime:
       isConstant: 1
       constantValue: 100

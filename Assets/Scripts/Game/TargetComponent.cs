@@ -9,15 +9,7 @@ namespace ModifiedObject.Scripts.Game
     public struct TargetReferences
     {
         [SerializeField]
-        public Utils.References.BooleanReference foundTarget;
-        [SerializeField]
         public Utils.References.IntegerReference score;
-        [SerializeField]
-        public Utils.References.Vector3Reference targetPosition;
-        [SerializeField]
-        public Utils.References.Vector3Reference targetRotation;
-        [SerializeField]
-        public Utils.References.Vector3Reference targetFacing;
     }
 
     [System.Serializable]
@@ -80,7 +72,7 @@ namespace ModifiedObject.Scripts.Game
     /// <summary>
     /// The Target Component.
     /// </summary>c
-    public class TargetComponent : MonoBehaviour
+    public class TargetComponent : ATargetComponent
     {
         [SerializeField]
         private TargetReferences references;
@@ -92,7 +84,7 @@ namespace ModifiedObject.Scripts.Game
         /// <summary>
         /// Called when the target has started.
         /// </summary>
-        private void Start()
+        protected override void OnStart()
         {
             this._scores = new List<TargetScore>();
             this.values.GetTargetScores(ref this._scores);
@@ -101,29 +93,6 @@ namespace ModifiedObject.Scripts.Game
             {
                 Debug.Log(s.Score);
             }
-        }
-
-        /// <summary>
-        /// Called when the target is enabled.
-        /// </summary>
-        private void OnEnable()
-        {
-            this.references.foundTarget.Value = true;
-        }
-
-        /// <summary>
-        /// Called when the object is disabled.
-        /// </summary>
-        private void OnDisable()
-        {
-            this.references.foundTarget.Value = false;
-        }
-
-        private void Update()
-        {
-            this.references.targetPosition.Value = this.transform.position;
-            this.references.targetRotation.Value = this.transform.eulerAngles;
-            this.references.targetFacing.Value = this.transform.forward;
         }
 
         /// <summary>

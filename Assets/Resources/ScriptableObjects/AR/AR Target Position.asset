@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 571db2af423f241eb9b8f99e9c3cb742, type: 3}
-  m_Name: Target Facing
+  m_Name: AR Target Position
   m_EditorClassIdentifier: 
   originalValue: {x: 0, y: 0, z: 0}
   value: {x: 0, y: 0, z: 0}

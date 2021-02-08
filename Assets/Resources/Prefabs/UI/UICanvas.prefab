@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7580245211846013047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -412,4 +412,4 @@ MonoBehaviour:
     targetFound:
       isConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 02e7f0d3782a2434d8408c3d2784c8ca, type: 2}
+      variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}

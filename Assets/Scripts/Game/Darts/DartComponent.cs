@@ -14,13 +14,10 @@ namespace ModifiedObject.Scripts.Game
         public Utils.References.Vector3Reference originalDirection;
         [SerializeField]
         public Utils.References.FloatReference originalForce;
-
         [SerializeField]
         public Utils.References.Vector3Reference targetPosition;
         [SerializeField]
-        public Utils.References.Vector3Reference targetRotation;
-        [SerializeField]
-        public Utils.References.Vector3Reference targetFacing;
+        public Utils.References.QuaternionReference targetRotation;
         [SerializeField]
         public Utils.References.FloatReference despawnCooldownTime;
     }
@@ -149,19 +146,19 @@ namespace ModifiedObject.Scripts.Game
             this._prevTargetPosition = targetPosition;
         }
 
-        private void OnTargetChangedRotation(Vector3 targetRotation)
+        private void OnTargetChangedRotation(Quaternion targetRotation)
         {
             if(!this._hitTarget)
             {
-                this._prevTargetEulers = targetRotation;
+                this._prevTargetEulers = targetRotation.eulerAngles;
                 return;
             }
 
-            Vector3 newTargetDifference = targetRotation - this._prevTargetEulers;
+            Vector3 newTargetDifference = targetRotation.eulerAngles - this._prevTargetEulers;
             Quaternion quat = this.transform.rotation;
             quat.eulerAngles += newTargetDifference;
             this.transform.rotation = quat;
-            this._prevTargetEulers = targetRotation;
+            this._prevTargetEulers = targetRotation.eulerAngles;
         }
 
         private void CallDartHitEvent(DartThrowOutcome outcome, int points = 0)
