@@ -121,6 +121,8 @@ MonoBehaviour:
       isConstant: 1
       constantValue: 100
       variable: {fileID: 0}
+  events:
+    dartHitEvent: {fileID: 11400000, guid: 1f31c06e1d1df934f805bd1293e19e1a, type: 2}
   pointToTrack: {fileID: 3712734304997032085}
 --- !u!1 &9109248481457917920
 GameObject:

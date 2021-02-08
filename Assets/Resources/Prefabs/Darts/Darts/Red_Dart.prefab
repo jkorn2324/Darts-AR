@@ -134,6 +134,8 @@ MonoBehaviour:
       isConstant: 1
       constantValue: 100
       variable: {fileID: 0}
+  events:
+    dartHitEvent: {fileID: 11400000, guid: 1f31c06e1d1df934f805bd1293e19e1a, type: 2}
   pointToTrack: {fileID: 2742069248401653984}
 --- !u!1001 &5493502530820232583
 PrefabInstance:
