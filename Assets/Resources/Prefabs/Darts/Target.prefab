@@ -52,10 +52,6 @@ MonoBehaviour:
     isConstant: 0
     constantValue: {x: 0, y: 0, z: 0, w: 0}
     variable: {fileID: 11400000, guid: 2689ed49abdc24108acfb653c67b2cd9, type: 2}
-  foundTarget:
-    isConstant: 0
-    constantValue: 0
-    variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
   references:
     score:
       isConstant: 0
@@ -128,7 +124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aacaeb220372142a8b042086ce4a2dd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

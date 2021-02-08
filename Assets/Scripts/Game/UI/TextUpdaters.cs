@@ -27,7 +27,7 @@ namespace ModifiedObject.Scripts.Game.UI
     }
 
     [System.Serializable]
-    public class IntegerTextUpdater : TextUpdater<int>
+    public class IntegerTextReferenceUpdater : TextUpdater<int>
     {
         [SerializeField]
         private Utils.References.IntegerReference variable;

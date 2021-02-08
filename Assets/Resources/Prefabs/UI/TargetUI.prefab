@@ -64,7 +64,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dc2de2e136cf5d7469150291a6418675, type: 3}
+  m_Sprite: {fileID: 4416531265127131454, guid: ab9f06650c46d0b4d8c51f59b46cccd2,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -122,7 +123,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4265752491182791915}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -346,7 +347,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Find and the point camera towards the following image.
+  m_Text: Find and point the camera towards a dart board.
 --- !u!1 &4265752492474605400
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2908504423708391699, guid: 3df37554c8ba7c74c80f1ce4034397bf,
+  m_Sprite: {fileID: -7751613111433716304, guid: ab9f06650c46d0b4d8c51f59b46cccd2,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0

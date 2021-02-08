@@ -22,7 +22,7 @@ namespace ModifiedObject.Scripts.Game.UI
     public class HUDCanvas : Utils.EventContainerComponent
     {
         [SerializeField]
-        private IntegerTextUpdater score;
+        private IntegerTextReferenceUpdater score;
         [SerializeField]
         private HUDReferences references;
 
