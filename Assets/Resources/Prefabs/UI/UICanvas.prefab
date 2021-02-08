@@ -409,3 +409,7 @@ MonoBehaviour:
       variable: {fileID: 11400000, guid: 20876cc384ce34760b25ed4f8da62ff2, type: 2}
   references:
     shootEvent: {fileID: 11400000, guid: d368e4c8d7eba4ba98a6f92c34731d7e, type: 2}
+    targetFound:
+      isConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: 02e7f0d3782a2434d8408c3d2784c8ca, type: 2}

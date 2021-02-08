@@ -11,11 +11,14 @@ namespace ModifiedObject.Scripts.Game.UI
     {
         [SerializeField]
         public Utils.Events.GameEvent shootEvent;
+        [SerializeField]
+        public Utils.References.BooleanReference targetFound;
     }
 
     /// <summary>
     /// The HUD Canvas.
     /// </summary>
+    [RequireComponent(typeof(Canvas))]
     public class HUDCanvas : Utils.EventContainerComponent
     {
         [SerializeField]
@@ -23,15 +26,24 @@ namespace ModifiedObject.Scripts.Game.UI
         [SerializeField]
         private HUDReferences references;
 
+        private Canvas _canvas;
+
+        protected override void OnStart()
+        {
+            this._canvas = this.GetComponent<Canvas>();
+            this.OnFoundTargetChanged(this.references.targetFound.Value);
+        }
 
         protected override void HookEvents()
         {
             this.score.HookEvent();
+            this.references.targetFound.ChangedValueEvent += this.OnFoundTargetChanged;
         }
 
         protected override void UnHookEvents()
         {
             this.score.UnHookEvent();
+            this.references.targetFound.ChangedValueEvent -= this.OnFoundTargetChanged;
         }
 
         /// <summary>
@@ -40,6 +52,11 @@ namespace ModifiedObject.Scripts.Game.UI
         public void OnShootButtonSelected()
         {
             this.references.shootEvent?.CallEvent();
+        }
+
+        private void OnFoundTargetChanged(bool foundTarget)
+        {
+            this._canvas.enabled = foundTarget;
         }
     }
 }
