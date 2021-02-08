@@ -27,7 +27,7 @@ namespace ModifiedObject.Scripts.Game.Player
         [SerializeField]
         private Utils.References.IntegerReference maxPlayers;
         [SerializeField]
-        private Utils.Events.GameEvent activePlayerChanged;
+        private Utils.Events.StringEvent activePlayerChanged;
 
         private int _minPlayers = 1;
         private List<GamePlayer> _players
@@ -68,14 +68,16 @@ namespace ModifiedObject.Scripts.Game.Player
         public void GenerateDefaultPlayers(GamePlayerColorSet colorSet, Utils.References.IntegerReference playerScore)
         {
             int currentPlayerIndex = 0;
-            while(this.CurrentPlayers < this.MinPlayers)
+            while(currentPlayerIndex < this.MinPlayers || currentPlayerIndex < this.MaxPlayers)
             {
                 GamePlayerColor color = colorSet.GetColor(currentPlayerIndex)
                     ?? colorSet.GenerateRandomColor();
-                GamePlayer player = new GamePlayer("Player" + currentPlayerIndex, color, playerScore);
+                GamePlayer player = new GamePlayer("Player" + (currentPlayerIndex + 1), color, playerScore);
                 this.AddGamePlayer(player);
                 currentPlayerIndex++;
             }
+            // Sets the active index to 0.
+            this._currentActiveIndex = 0;
         }
 
         public AddPlayerResult AddGamePlayer(GamePlayer player)
@@ -120,12 +122,12 @@ namespace ModifiedObject.Scripts.Game.Player
         public void SetNextPlayerAsActive()
         {
             this.ActivePlayer.SetActive(false);
-            if(++this._currentActiveIndex > this.CurrentPlayers)
+            if(++this._currentActiveIndex >= this.CurrentPlayers)
             {
                 this._currentActiveIndex = 0;
             }
             this.ActivePlayer.SetActive(true);
-            this.activePlayerChanged?.CallEvent();
+            this.activePlayerChanged?.CallEvent(this.ActivePlayer.Name);
         }
 
         #endregion

@@ -16,5 +16,5 @@ MonoBehaviour:
     isConstant: 0
     constantValue: 0
     variable: {fileID: 11400000, guid: d9cc92ffdabcc46218123b66c789d5c1, type: 2}
-  activePlayerChanged: {fileID: 11400000, guid: 71baf32a4000f429392a86cca50c8541,
+  activePlayerChanged: {fileID: 11400000, guid: 45c3851df0e234cd3a054b307ab7cf7c,
     type: 2}

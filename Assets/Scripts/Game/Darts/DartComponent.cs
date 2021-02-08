@@ -87,12 +87,14 @@ namespace ModifiedObject.Scripts.Game
         /// </summary>
         private void Update()
         {
-            if(this._hitTarget && this._despawnCooldownTime > 0.0f)
+            float totalDespawnCooldownTime = this.references.despawnCooldownTime.Value;
+            if(this._hitTarget && this._despawnCooldownTime < totalDespawnCooldownTime)
             {
-                this._despawnCooldownTime -= Time.deltaTime;
+                this._despawnCooldownTime += Time.deltaTime;
 
-                if(this._despawnCooldownTime <= 0.0f)
+                if(this._despawnCooldownTime >= totalDespawnCooldownTime)
                 {
+                    // TODO: Disappear object
                     Destroy(this.gameObject);
                 }
             }

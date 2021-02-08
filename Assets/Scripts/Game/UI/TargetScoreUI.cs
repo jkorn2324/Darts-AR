@@ -15,13 +15,16 @@ namespace ModifiedObject.Scripts.Game.UI
         private Text scoreText;
         [SerializeField]
         private DartHitEvent dartHitEvent;
+        [SerializeField]
+        private Utils.References.BooleanReference isPlaying;
+        [SerializeField]
+        private Game.Player.GamePlayerSet playerSet;
 
         private Animator _animator;
 
         protected override void OnStart()
         {
             this._animator = this.GetComponent<Animator>();
-            // this.scoreUI.enabled = false;
         }
 
         protected override void HookEvents()
@@ -36,6 +39,10 @@ namespace ModifiedObject.Scripts.Game.UI
 
         private void OnDartHit(DartHitOutcome @outcome)
         {
+            if(!this.isPlaying.Value)
+            {
+                return;
+            }
             this._animator.Play("InAnimation");
             if(outcome.throwOutcome == DartThrowOutcome.OUTCOME_HIT)
             {
@@ -50,7 +57,7 @@ namespace ModifiedObject.Scripts.Game.UI
         /// </summary>
         private void OnAnimationEnd()
         {
-            Debug.Log("Switch player");
+            this.playerSet?.SetNextPlayerAsActive();
         }
     }
 }

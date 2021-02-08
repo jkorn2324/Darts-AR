@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e256655fd4d34a1cb08e4c9e85eb544, type: 3}
-  m_Name: ActivePlayerChanged
+  m_Script: {fileID: 11500000, guid: 62c38c0de057e4875bb7b42423aac383, type: 3}
+  m_Name: CanShootDart
   m_EditorClassIdentifier: 
+  originalValue: 1
+  value: 1

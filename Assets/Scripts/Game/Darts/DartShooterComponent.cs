@@ -11,6 +11,10 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         public Utils.References.BooleanReference foundTarget;
         [SerializeField]
+        public Utils.References.BooleanReference canShootTarget;
+        [SerializeField]
+        public Utils.References.BooleanReference isPlaying;
+        [SerializeField]
         public Utils.Events.GameEvent shootEvent;
     }
 
@@ -26,7 +30,6 @@ namespace ModifiedObject.Scripts.Game
 
         protected override void HookEvents()
         {
-            Debug.Log("Hook Event");
             this.references.shootEvent?.HookEvent(this.ShootDart);
         }
 
@@ -44,9 +47,16 @@ namespace ModifiedObject.Scripts.Game
             {
                 return;
             }
+
+            if(!this.references.canShootTarget.Value)
+            {
+                return;
+            }
+
             Player.GamePlayer activePlayer = this.gamePlayerSet.ActivePlayer;
             if(activePlayer != null)
             {
+                this.references.canShootTarget.Value = !this.references.isPlaying.Value;
                 Instantiate(activePlayer.PlayerColor.DartPrefab);
             }
         }
