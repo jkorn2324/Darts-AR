@@ -54,6 +54,30 @@ namespace ModifiedObject.Scripts.Game.Player
 
         #region methods
 
+        /// <summary>
+        /// Clears the players.
+        /// </summary>
+        public void ResetPlayers()
+        {
+            this._players.Clear();
+        }
+
+        /// <summary>
+        /// Generates the default players.
+        /// </summary>
+        public void GenerateDefaultPlayers(GamePlayerColorSet colorSet, Utils.References.IntegerReference playerScore)
+        {
+            int currentPlayerIndex = 0;
+            while(this.CurrentPlayers < this.MinPlayers)
+            {
+                GamePlayerColor color = colorSet.GetColor(currentPlayerIndex)
+                    ?? colorSet.GenerateRandomColor();
+                GamePlayer player = new GamePlayer("Player" + currentPlayerIndex, color, playerScore);
+                this.AddGamePlayer(player);
+                currentPlayerIndex++;
+            }
+        }
+
         public AddPlayerResult AddGamePlayer(GamePlayer player)
         {
             if(this.CurrentPlayers >= this.MaxPlayers)
@@ -85,7 +109,7 @@ namespace ModifiedObject.Scripts.Game.Player
             });
         }
 
-        public GamePlayer GetGamePlayerFromColor(PlayerColor color)
+        public GamePlayer GetGamePlayerFromColor(GamePlayerColor color)
         {
             return this._players.Find((GamePlayer searched) =>
             {
@@ -95,10 +119,12 @@ namespace ModifiedObject.Scripts.Game.Player
 
         public void SetNextPlayerAsActive()
         {
+            this.ActivePlayer.SetActive(false);
             if(++this._currentActiveIndex > this.CurrentPlayers)
             {
                 this._currentActiveIndex = 0;
             }
+            this.ActivePlayer.SetActive(true);
             this.activePlayerChanged?.CallEvent();
         }
 

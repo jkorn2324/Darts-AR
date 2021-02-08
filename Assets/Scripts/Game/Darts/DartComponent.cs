@@ -25,11 +25,20 @@ namespace ModifiedObject.Scripts.Game
         public Utils.References.FloatReference despawnCooldownTime;
     }
 
+    [System.Serializable]
+    public struct DartEvents
+    {
+        [SerializeField]
+        public DartHitEvent dartHitEvent;
+    }
+
     [RequireComponent(typeof(Rigidbody))]
     public class DartComponent : Utils.EventContainerComponent, IDestroyable
     {
         [SerializeField]
         private DartReferences references;
+        [SerializeField]
+        private DartEvents events;
         [SerializeField]
         private GameObject pointToTrack;
 
@@ -77,6 +86,9 @@ namespace ModifiedObject.Scripts.Game
             this.references.targetRotation.ChangedValueEvent -= this.OnTargetChangedRotation;
         }
 
+        /// <summary>
+        /// Updates the dart.
+        /// </summary>
         private void Update()
         {
             if(this._hitTarget && this._despawnCooldownTime > 0.0f)
@@ -88,11 +100,6 @@ namespace ModifiedObject.Scripts.Game
                     Destroy(this.gameObject);
                 }
             }
-
-            Vector3 projection = Vector3.ProjectOnPlane(
-                this.transform.position, this.references.targetFacing.Value);
-            Debug.DrawLine(projection, this.transform.position);
-
         }
 
         /// <summary>
@@ -115,7 +122,7 @@ namespace ModifiedObject.Scripts.Game
                 this._prevTargetPosition = target.transform.position;
                 this._prevTargetEulers = target.transform.eulerAngles;
 
-                target.OnDartCollide(this);
+                this.CallDartHitEvent(DartThrowOutcome.OUTCOME_HIT, target.OnDartCollide(this));
             }
         }
 
@@ -125,6 +132,7 @@ namespace ModifiedObject.Scripts.Game
         /// <param name="destroyer">The object destroyer.</param>
         public void OnDestroyerHit(ObjectDestroyer destroyer)
         {
+            this.CallDartHitEvent(DartThrowOutcome.OUTCOME_MISSED);
             Destroy(this.gameObject);
         }
 
@@ -154,6 +162,14 @@ namespace ModifiedObject.Scripts.Game
             quat.eulerAngles += newTargetDifference;
             this.transform.rotation = quat;
             this._prevTargetEulers = targetRotation;
+        }
+
+        private void CallDartHitEvent(DartThrowOutcome outcome, int points = 0)
+        {
+            DartHitOutcome hitOutcome = new DartHitOutcome();
+            hitOutcome.points = points;
+            hitOutcome.throwOutcome = outcome;
+            this.events.dartHitEvent?.CallEvent(hitOutcome);
         }
     }
 }

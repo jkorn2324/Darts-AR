@@ -130,18 +130,20 @@ namespace ModifiedObject.Scripts.Game
         /// Called when the Dart hit the target.
         /// </summary>
         /// <param name="component">The dart component.</param>
-        public void OnDartCollide(DartComponent component)
+        public int OnDartCollide(DartComponent component)
         {
             if(component == null)
             {
-                return;
+                return 0;
             }
 
             Vector3 center = this.transform.position;
             float distanceFromCenter = Mathf.Abs(Vector3.Distance(center, component.DartPosition));
             float percentageTargetRadius = distanceFromCenter / values.maxTargetRadius;
             int newScore = this.CalculateScore(percentageTargetRadius);
+            int oldScore = this.references.score.Value;
             this.references.score.Value += newScore;
+            return newScore - oldScore;
         }
 
         /// <summary>

@@ -5,19 +5,6 @@ using UnityEngine;
 namespace ModifiedObject.Scripts.Game.Player
 {
 
-    /// <summary>
-    /// The player color.
-    /// </summary>
-    public enum PlayerColor
-    {
-        COLOR_RED,
-        COLOR_BLUE,
-        COLOR_GREEN,
-        COLOR_BLACK,
-        COLOR_YELLOW,
-        COLOR_WHITE
-    }
-
     public class PlayerScore
     {
         #region fields
@@ -55,7 +42,7 @@ namespace ModifiedObject.Scripts.Game.Player
         /// <summary>
         /// Called when the current player has been switched as active.
         /// </summary>
-        public void OnSetCurrentThrowingPlayer()
+        public void SetActiveScore()
         {
             this._currentPlayerScore.Value = this._score;
         }
@@ -72,8 +59,9 @@ namespace ModifiedObject.Scripts.Game.Player
         #region fields
 
         private readonly string _name;
-        private readonly PlayerColor _color;
+        private readonly GamePlayerColor _color;
         private PlayerScore _score;
+        private bool _isActive = false;
 
         #endregion
 
@@ -82,7 +70,7 @@ namespace ModifiedObject.Scripts.Game.Player
         public string Name
             => this._name.ToLower();
 
-        public PlayerColor PlayerColor
+        public GamePlayerColor PlayerColor
             => this._color;
 
         public PlayerScore Score
@@ -92,7 +80,7 @@ namespace ModifiedObject.Scripts.Game.Player
 
         #region constructor
 
-        public GamePlayer(string name, PlayerColor color,
+        public GamePlayer(string name, GamePlayerColor color,
             Utils.References.IntegerReference currentPlayerScore)
         {
             this._name = name;
@@ -105,12 +93,16 @@ namespace ModifiedObject.Scripts.Game.Player
         #region methods
 
         /// <summary>
-        /// Called when this player has become the current player
-        /// to throw.
+        /// Called to set the player as active.
         /// </summary>
-        public void SetCurrentThrowingPlayer()
+        /// <param name="active">Active value.</param>
+        public void SetActive(bool active)
         {
-            this._score.OnSetCurrentThrowingPlayer();
+            if(active)
+            {
+                this._score.SetActiveScore();
+            }
+            this._isActive = active;
         }
 
         #endregion

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ec73b134543744b8fe1ba8ab37f87b, type: 3}
+  m_Name: ColorsSet
+  m_EditorClassIdentifier: 
+  colors:
+  - {fileID: 11400000, guid: 1975ae96b024c6b4db26662f48b8b60d, type: 2}
+  - {fileID: 11400000, guid: 05821006ce531a2409f12f84ab3a9373, type: 2}
+  - {fileID: 11400000, guid: 0b5780f3d74742b4c9abaad232a98fad, type: 2}
+  - {fileID: 11400000, guid: 3ecb58ad4d848b3418802a7fab1664d3, type: 2}
+  - {fileID: 11400000, guid: f7361a22a82abcc4b8afba1756f0e60b, type: 2}
+  defaultDartPrefab: {fileID: 6142232134959981019, guid: 31eef80d097a79a4298654914128997d,
+    type: 3}

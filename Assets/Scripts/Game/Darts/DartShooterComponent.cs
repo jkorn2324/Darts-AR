@@ -22,7 +22,7 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private DartShooterReferences references;
         [SerializeField]
-        private GameObject dartPrefab;
+        private Player.GamePlayerSet gamePlayerSet;
 
         protected override void HookEvents()
         {
@@ -44,7 +44,11 @@ namespace ModifiedObject.Scripts.Game
             {
                 return;
             }
-            Instantiate(this.dartPrefab);
+            Player.GamePlayer activePlayer = this.gamePlayerSet.ActivePlayer;
+            if(activePlayer != null)
+            {
+                Instantiate(activePlayer.PlayerColor.DartPrefab);
+            }
         }
     }
 }
