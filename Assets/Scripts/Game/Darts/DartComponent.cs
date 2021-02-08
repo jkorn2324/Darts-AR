@@ -45,7 +45,6 @@ namespace ModifiedObject.Scripts.Game
         private Vector3 _prevTargetEulers = Vector3.zero;
 
         private float _despawnCooldownTime = 0.0f;
-
         private bool _hitTarget = false;
 
         public Vector3 DartPosition
@@ -107,7 +106,7 @@ namespace ModifiedObject.Scripts.Game
         {
             TargetComponent target = collision.gameObject.GetComponent<TargetComponent>()
                 ?? collision.gameObject.GetComponentInParent<TargetComponent>();
-            if(target != null)
+            if(target != null && !this._hitTarget)
             {
                 this._rigidbody.velocity = Vector3.zero;
                 this._rigidbody.useGravity = false;

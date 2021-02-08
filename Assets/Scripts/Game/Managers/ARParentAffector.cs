@@ -38,6 +38,11 @@ namespace ModifiedObject.Scripts.Game
             int i = 0;
             foreach(GameObject _object in this.objectsAffected)
             {
+                if(_object == null)
+                {
+                    continue;
+                }
+
                 if(!changed)
                 {
                     this._prevObjectActiveState.Add(_object, _object.activeSelf);
