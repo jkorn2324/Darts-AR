@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 
 namespace ModifiedObject.Scripts.Game
@@ -45,7 +46,14 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private Utils.References.BooleanReference foundTarget;
 
+        private ARSession _session;
+
         private static int numTargetsCount = 0;
+
+        protected override void OnStart()
+        {
+            this._session = FindObjectOfType<ARSession>();
+        }
 
         protected override void OnEnabled()
         {
@@ -79,6 +87,11 @@ namespace ModifiedObject.Scripts.Game
 
         private void OnReplaced()
         {
+            // Resets the ar session.
+            if(this._session != null)
+            {
+                this._session.Reset();
+            }
             Destroy(this.gameObject);
         }
 

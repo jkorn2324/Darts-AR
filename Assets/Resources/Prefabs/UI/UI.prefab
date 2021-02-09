@@ -1024,6 +1024,10 @@ MonoBehaviour:
   references:
     shootEvent: {fileID: 11400000, guid: d368e4c8d7eba4ba98a6f92c34731d7e, type: 2}
     replaceEvent: {fileID: 11400000, guid: 9e949196cad5c41dabf1822cb2c41d8c, type: 2}
+    canReplace:
+      isConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: db4c548d328fc422ebd4a8f9afe3fba4, type: 2}
     targetFound:
       isConstant: 0
       constantValue: 0

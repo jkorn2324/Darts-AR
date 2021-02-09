@@ -127,9 +127,9 @@ MonoBehaviour:
       constantValue: {x: 0, y: 0, z: 0, w: 0}
       variable: {fileID: 11400000, guid: 2689ed49abdc24108acfb653c67b2cd9, type: 2}
     despawnCooldownTime:
-      isConstant: 1
+      isConstant: 0
       constantValue: 100
-      variable: {fileID: 0}
+      variable: {fileID: 11400000, guid: be9816975d0834440bb3cf24825c4c8f, type: 2}
   events:
     dartHitEvent: {fileID: 11400000, guid: 1f31c06e1d1df934f805bd1293e19e1a, type: 2}
   pointToTrack: {fileID: 2742069248401653984}

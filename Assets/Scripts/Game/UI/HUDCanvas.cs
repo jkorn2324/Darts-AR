@@ -14,6 +14,8 @@ namespace ModifiedObject.Scripts.Game.UI
         [SerializeField]
         public Utils.Events.GameEvent replaceEvent;
         [SerializeField]
+        public Utils.References.BooleanReference canReplace;
+        [SerializeField]
         public Utils.References.BooleanReference targetFound;
     }
 
@@ -61,6 +63,10 @@ namespace ModifiedObject.Scripts.Game.UI
         /// </summary>
         public void OnReplaceButtonSelected()
         {
+            if(!this.references.canReplace.Value)
+            {
+                return;
+            }
             this.references.replaceEvent?.CallEvent();
         }
 

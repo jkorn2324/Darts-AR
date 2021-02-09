@@ -124,7 +124,8 @@ namespace ModifiedObject.Scripts.Game
 
         public float GetShortestDistance(Vector3 point, ref Vector3 centerPoint)
         {
-            float maxDistance = float.PositiveInfinity;
+            float maxDistance = Mathf.Abs(
+                Vector3.Distance(centerPoint, point));
             foreach(GameObject gameObject in this.centerPoints)
             {
                 Vector3 position = gameObject.transform.position;
