@@ -10,6 +10,8 @@ namespace ModifiedObject.Scripts.Game.UI
         private Utils.Events.StringEvent switchedEvent;
         [SerializeField]
         private Text playerText;
+        [SerializeField]
+        private Utils.References.BooleanReference canShoot;
 
         private Animator _animator;
 
@@ -30,8 +32,16 @@ namespace ModifiedObject.Scripts.Game.UI
 
         private void OnSwitchedPlayer(string playerName)
         {
-            // tODO: Begin animation
+            this._animator.Play("InTransition");
             this.playerText.text = playerName.ToUpper() + " IS NOW UP";
+        }
+
+        /// <summary>
+        /// Called when the animation has ended.
+        /// </summary>
+        private void OnAnimationEnd()
+        {
+            this.canShoot.Value = true;
         }
     }
 }

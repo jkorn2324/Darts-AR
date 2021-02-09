@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &246526400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246526401}
+  m_Layer: 0
+  m_Name: Back_Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246526401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246526400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3881503228180163724}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &533892585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533892586}
+  m_Layer: 0
+  m_Name: Front_Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533892586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533892585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3881503228180163724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3881503226927288852
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3881503226927288852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693a2671497a74d17b391a2ac792b1ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cf6246e6832f440099733575086af9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   positionReference:
@@ -60,11 +120,107 @@ MonoBehaviour:
   values:
     maxTargetRadius: 0.5
     baseScore: 0
-    scores:
-    - maxDistancePercentage: 50
+    sections:
+    - minAngle: 352
+      differenceMaxAngle: 17
+      score: 6
+    - minAngle: 10
+      differenceMaxAngle: 17
+      score: 13
+    - minAngle: 28
+      differenceMaxAngle: 17
+      score: 4
+    - minAngle: 46
+      differenceMaxAngle: 17
+      score: 18
+    - minAngle: 64
+      differenceMaxAngle: 17
+      score: 1
+    - minAngle: 82
+      differenceMaxAngle: 17
+      score: 20
+    - minAngle: 100
+      differenceMaxAngle: 17
+      score: 5
+    - minAngle: 118
+      differenceMaxAngle: 17
+      score: 12
+    - minAngle: 136
+      differenceMaxAngle: 17
+      score: 9
+    - minAngle: 154
+      differenceMaxAngle: 17
+      score: 14
+    - minAngle: 172
+      differenceMaxAngle: 17
+      score: 11
+    - minAngle: 190
+      differenceMaxAngle: 17
+      score: 8
+    - minAngle: 208
+      differenceMaxAngle: 17
+      score: 16
+    - minAngle: 226
+      differenceMaxAngle: 17
+      score: 7
+    - minAngle: 244
+      differenceMaxAngle: 17
+      score: 19
+    - minAngle: 262
+      differenceMaxAngle: 17
+      score: 3
+    - minAngle: 280
+      differenceMaxAngle: 17
+      score: 17
+    - minAngle: 298
+      differenceMaxAngle: 17
+      score: 2
+    - minAngle: 316
+      differenceMaxAngle: 17
+      score: 15
+    - minAngle: 334
+      differenceMaxAngle: 17
       score: 10
-    - maxDistancePercentage: 20
-      score: 30
+    scoreMultipliers:
+    - IsBullseye: 1
+      IsMultiplier: 0
+      scoreIfNotMultiplier: 50
+      maxDistancePercentage: 10
+      scoreMultiplier: 1
+    - IsBullseye: 1
+      IsMultiplier: 0
+      scoreIfNotMultiplier: 25
+      maxDistancePercentage: 20
+      scoreMultiplier: 1
+    - IsBullseye: 0
+      IsMultiplier: 1
+      scoreIfNotMultiplier: 0
+      maxDistancePercentage: 45
+      scoreMultiplier: 1
+    - IsBullseye: 0
+      IsMultiplier: 1
+      scoreIfNotMultiplier: 0
+      maxDistancePercentage: 55
+      scoreMultiplier: 3
+    - IsBullseye: 0
+      IsMultiplier: 1
+      scoreIfNotMultiplier: 0
+      maxDistancePercentage: 80
+      scoreMultiplier: 1
+    - IsBullseye: 0
+      IsMultiplier: 1
+      scoreIfNotMultiplier: 0
+      maxDistancePercentage: 90
+      scoreMultiplier: 2
+    - IsBullseye: 0
+      IsMultiplier: 0
+      scoreIfNotMultiplier: 0
+      maxDistancePercentage: 100
+      scoreMultiplier: 1
+  centerPoints:
+    centerPoints:
+    - {fileID: 533892585}
+    - {fileID: 246526400}
 --- !u!1 &3881503228180163725
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +251,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000001, y: 0.02, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 533892586}
+  - {fileID: 246526401}
   m_Father: {fileID: 3881503226927288855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

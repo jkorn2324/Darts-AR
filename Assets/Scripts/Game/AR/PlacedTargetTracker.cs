@@ -34,8 +34,10 @@ namespace ModifiedObject.Scripts.Game
     /// <summary>
     /// The placed target tracker.
     /// </summary>
-    public class PlacedTargetTracker : MonoBehaviour
+    public class PlacedTargetTracker : Utils.EventContainerComponent
     {
+        [SerializeField]
+        private Utils.Events.GameEvent replaceEvent;
         [SerializeField]
         private Utils.References.Vector3Reference positionReference;
         [SerializeField]
@@ -43,9 +45,12 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private Utils.References.BooleanReference foundTarget;
 
-        private void OnEnable()
+        private static int numTargetsCount = 0;
+
+        protected override void OnEnabled()
         {
-            if(this.foundTarget.Value)
+            numTargetsCount++;
+            if (this.foundTarget.Value)
             {
                 Destroy(this.gameObject);
                 return;
@@ -54,9 +59,27 @@ namespace ModifiedObject.Scripts.Game
             this.foundTarget.Value = true;
         }
 
-        private void OnDisable()
+        protected override void HookEvents()
         {
-            this.foundTarget.Value = false;
+            this.replaceEvent?.HookEvent(this.OnReplaced);
+        }
+
+        protected override void UnHookEvents()
+        {
+            this.replaceEvent?.UnHookEvent(this.OnReplaced);
+        }
+
+        protected override void OnDisabled()
+        {
+            if(--numTargetsCount <= 0)
+            {
+                this.foundTarget.Value = false;
+            }
+        }
+
+        private void OnReplaced()
+        {
+            Destroy(this.gameObject);
         }
 
         private void Update()

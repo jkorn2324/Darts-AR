@@ -12,6 +12,8 @@ namespace ModifiedObject.Scripts.Game.UI
         [SerializeField]
         public Utils.Events.GameEvent shootEvent;
         [SerializeField]
+        public Utils.Events.GameEvent replaceEvent;
+        [SerializeField]
         public Utils.References.BooleanReference targetFound;
     }
 
@@ -52,6 +54,14 @@ namespace ModifiedObject.Scripts.Game.UI
         public void OnShootButtonSelected()
         {
             this.references.shootEvent?.CallEvent();
+        }
+
+        /// <summary>
+        /// Called when the replace scene button has been selected.
+        /// </summary>
+        public void OnReplaceButtonSelected()
+        {
+            this.references.replaceEvent?.CallEvent();
         }
 
         private void OnFoundTargetChanged(bool foundTarget)
