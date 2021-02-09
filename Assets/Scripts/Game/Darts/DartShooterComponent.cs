@@ -18,15 +18,32 @@ namespace ModifiedObject.Scripts.Game
         public Utils.Events.GameEvent shootEvent;
     }
 
+    [System.Serializable]
+    public struct DartShooterSounds
+    {
+        [SerializeField]
+        public AudioClip shootSound;
+    }
+
     /// <summary>
     /// The dart shooter component.
     /// </summary>
+    [RequireComponent(typeof(AudioSource))]
     public class DartShooterComponent : Utils.EventContainerComponent
     {
         [SerializeField]
         private DartShooterReferences references;
         [SerializeField]
+        private DartShooterSounds sounds;
+        [SerializeField]
         private Player.GamePlayerSet gamePlayerSet;
+
+        private AudioSource _audioSource;
+
+        protected override void OnStart()
+        {
+            this._audioSource = this.GetComponent<AudioSource>();
+        }
 
         protected override void HookEvents()
         {
@@ -56,6 +73,9 @@ namespace ModifiedObject.Scripts.Game
             Player.GamePlayer activePlayer = this.gamePlayerSet.ActivePlayer;
             if(activePlayer != null)
             {
+                this._audioSource.clip = this.sounds.shootSound;
+                this._audioSource.Play();
+
                 this.references.canShootTarget.Value = !this.references.isPlaying.Value;
                 Instantiate(activePlayer.PlayerColor.DartPrefab);
             }

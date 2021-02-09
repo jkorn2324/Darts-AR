@@ -29,7 +29,14 @@ namespace ModifiedObject.Scripts.Game
         public DartHitEvent dartHitEvent;
     }
 
-    [RequireComponent(typeof(Rigidbody))]
+    [System.Serializable]
+    public struct DartSounds
+    {
+        [SerializeField]
+        public AudioClip hitSound;
+    }
+
+    [RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
     public class DartComponent : Utils.EventContainerComponent, IDestroyable
     {
         [SerializeField]
@@ -37,9 +44,12 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private DartEvents events;
         [SerializeField]
+        private DartSounds sounds;
+        [SerializeField]
         private GameObject pointToTrack;
 
         private Rigidbody _rigidbody;
+        private AudioSource _audioSource;
 
         private Vector3 _prevTargetPosition = Vector3.zero;
         private Vector3 _prevTargetEulers = Vector3.zero;
@@ -56,6 +66,8 @@ namespace ModifiedObject.Scripts.Game
         /// </summary>
         protected override void OnStart()
         {
+            this._audioSource = this.GetComponent<AudioSource>();
+
             // Sets the start position.
             this.transform.position = this.references.originalPosition.Value;
 
@@ -119,6 +131,9 @@ namespace ModifiedObject.Scripts.Game
 
                 this._prevTargetPosition = target.transform.position;
                 this._prevTargetEulers = target.transform.eulerAngles;
+
+                this._audioSource.clip = this.sounds.hitSound;
+                this._audioSource.Play();
 
                 this.CallDartHitEvent(DartThrowOutcome.OUTCOME_HIT, target.OnDartCollide(this));
             }
