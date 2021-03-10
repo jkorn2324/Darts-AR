@@ -63,7 +63,7 @@ namespace ModifiedObject.Scripts.Game.Player
         }
 
         /// <summary>
-        /// Generates the default players.
+        /// Generates the default players...
         /// </summary>
         public void GenerateDefaultPlayers(GamePlayerColorSet colorSet, Utils.References.IntegerReference playerScore)
         {

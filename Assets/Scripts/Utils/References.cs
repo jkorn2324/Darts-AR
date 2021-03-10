@@ -238,6 +238,45 @@ namespace ModifiedObject.Scripts.Utils.References
     }
 
     /// <summary>
+    /// The Vector2 Reference class definition.
+    /// </summary>
+    [System.Serializable]
+    public class Vector2Reference : GenericReference<Vector2>
+    {
+        [SerializeField]
+        private Variables.Vector2Variable variable;
+
+        public event System.Action<Vector2> ChangedValueEvent
+        {
+            add
+            {
+                if (this.variable == null) return;
+
+                this.variable.ChangedValueEvent += value;
+            }
+            remove
+            {
+                if (this.variable == null) return;
+                this.variable.ChangedValueEvent -= value;
+            }
+        }
+
+        protected override Vector2 ReferenceValue
+        {
+            get => this.variable.Value;
+            set => this.variable.Value = value;
+        }
+
+        public override bool HasVariable
+            => this.variable != null;
+
+        public override void Reset()
+        {
+            this.variable?.Reset();
+        }
+    }
+
+    /// <summary>
     /// The Vector3 Reference class definition.
     /// </summary>
     [System.Serializable]

@@ -15,6 +15,8 @@ namespace ModifiedObject.Scripts.Game.Player
         private GamePlayerSet playerSet;
         [SerializeField]
         private GamePlayerColorSet colorSet;
+        [SerializeField]
+        private bool generateDefaultPlayers = true;
 
         private static bool _playerManagerExists = false;
 
@@ -39,7 +41,10 @@ namespace ModifiedObject.Scripts.Game.Player
         /// </summary>
         private void GenerateDefaultPlayers()
         {
-            this.playerSet?.GenerateDefaultPlayers(this.colorSet, activePlayerScore);
+            if(this.generateDefaultPlayers)
+            {
+                this.playerSet?.GenerateDefaultPlayers(this.colorSet, activePlayerScore);
+            }
         }
     }
 }
