@@ -10,6 +10,12 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+# Ignore vscode
+.vscode/
+
+# Ignore .ds_store
+.DS_Store
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
