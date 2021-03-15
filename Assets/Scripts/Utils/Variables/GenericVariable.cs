@@ -16,9 +16,8 @@ namespace ModifiedObject.Scripts.Utils.Variables
         private T value;
 
 
-        public event System.Action<T> ChangedValueEvent
-            = delegate { };
-
+        private EventDelegate<T> _changedValueEvent
+            = new EventDelegate<T>();
 
         public T Value
         {
@@ -27,10 +26,20 @@ namespace ModifiedObject.Scripts.Utils.Variables
             {
                 if(!this.value.Equals(value))
                 {
-                    this.ChangedValueEvent(value);
+                    this._changedValueEvent.Invoke(value);
                 }
                 this.value = value;
             }
+        }
+
+        public void AddChangedValueEventCallback(System.Action<T> func)
+        {
+            this._changedValueEvent.AddCallback(func);
+        }
+
+        public void RemoveChangedValueEventCallback(System.Action<T> func)
+        {
+            this._changedValueEvent.RemoveCallback(func);
         }
 
         public void Reset()

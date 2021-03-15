@@ -57,12 +57,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -95,13 +95,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -134,13 +133,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -173,13 +171,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -212,13 +209,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -251,13 +247,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 
@@ -290,13 +285,12 @@ namespace ModifiedObject.Scripts.Utils.References
             add
             {
                 if (this.variable == null) return;
-
-                this.variable.ChangedValueEvent += value;
+                this.variable.AddChangedValueEventCallback(value);
             }
             remove
             {
                 if (this.variable == null) return;
-                this.variable.ChangedValueEvent -= value;
+                this.variable.RemoveChangedValueEventCallback(value);
             }
         }
 

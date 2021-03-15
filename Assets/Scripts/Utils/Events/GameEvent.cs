@@ -11,9 +11,9 @@ namespace ModifiedObject.Scripts.Utils.Events
     [CreateAssetMenu(fileName = "Game Event", menuName = "Events/Game Event")]
     public class GameEvent : ScriptableObject
     {
-        private event System.Action _event
-            = delegate { };
 
+        private EventDelegate _event
+            = new EventDelegate();
 
         public void HookEvent(System.Action func)
         {
@@ -27,7 +27,7 @@ namespace ModifiedObject.Scripts.Utils.Events
 
         public void CallEvent()
         {
-            this._event();
+            this._event.Invoke();
         }
     }
 }

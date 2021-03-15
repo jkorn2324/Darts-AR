@@ -10,9 +10,9 @@ namespace ModifiedObject.Scripts.Utils.Events
     /// </summary>
     public abstract class GenericEvent<T> : ScriptableObject
     {
-        private event System.Action<T> _event
-            = delegate { };
 
+        private EventDelegate<T> _event
+            = new EventDelegate<T>();
 
         public void HookEvent(System.Action<T> func)
         {
@@ -26,7 +26,7 @@ namespace ModifiedObject.Scripts.Utils.Events
 
         public void CallEvent(T var)
         {
-            this._event(var);
+            this._event.Invoke(var);
         }
     }
 }
