@@ -210,10 +210,6 @@ namespace ModifiedObject.Scripts.Game
             int score = 0;
             if(section.HasValue)
             {
-                Debug.Log(percentageFromCenter);
-                Debug.Log(multiplier.IsMultiplier);
-                Debug.Log(multiplier.scoreIfNotMultiplier);
-
                 if (multiplier.IsMultiplier)
                 {
                     score = (int)(section.Value.score * multiplier.ScoreMultiplier);
