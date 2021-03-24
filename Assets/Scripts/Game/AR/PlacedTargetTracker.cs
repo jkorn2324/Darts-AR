@@ -64,7 +64,13 @@ namespace ModifiedObject.Scripts.Game
                 return;
             }
             DontDestroyOnLoad(this.gameObject);
-            this.foundTarget.Value = true;
+            StartCoroutine(DelayFoundTarget(true));
+        }
+
+        private IEnumerator DelayFoundTarget(bool newValue)
+        {
+            yield return new WaitUntil(() => this.foundTarget != null);
+            this.foundTarget.Value = newValue;
         }
 
         protected override void HookEvents()

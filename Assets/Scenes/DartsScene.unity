@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -768,55 +768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 251929735, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 251929736, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: foundTarget.isConstant
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 251929736, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: foundTarget.variable
-      value: 
-      objectReference: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536,
-        type: 2}
-    - target: {fileID: 1071286617, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_Name
-      value: Buttons
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.22314298
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.020000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.04527106
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071286618, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.9541777
-      objectReference: {fileID: 0}
     - target: {fileID: 1761069141, guid: 8cd52b99ffbff4063ab52427378ab014, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0

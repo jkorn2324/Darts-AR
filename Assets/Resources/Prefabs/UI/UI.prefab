@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &55108648
 Transform:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251929731}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -188,10 +188,10 @@ MonoBehaviour:
     isConstant: 0
     constantValue: 0
     variable: {fileID: 11400000, guid: e34a6f198c258f940a44984e7f66b797, type: 2}
-  selectingNewTracker:
+  foundTarget:
     isConstant: 0
     constantValue: 0
-    variable: {fileID: 11400000, guid: db18d392ab7d73f4aabb5dbe5d395bad, type: 2}
+    variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
 --- !u!1 &369283443
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,8 +402,8 @@ RectTransform:
   m_Father: {fileID: 251929732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.045258403, y: 0.74478453}
-  m_AnchorMax: {x: 0.95474166, y: 0.9432778}
+  m_AnchorMin: {x: 0.04527106, y: 0.020000001}
+  m_AnchorMax: {x: 0.9541777, y: 0.22314298}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1093,7 +1093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5.5999756, y: -126.3}
+  m_AnchoredPosition: {x: 5.5999756, y: -126.299805}
   m_SizeDelta: {x: 435, y: 144.08691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3990645310959008527
@@ -1681,7 +1681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5.6, y: -146.8}
+  m_AnchoredPosition: {x: 5.6, y: -146.7998}
   m_SizeDelta: {x: 435, y: 185.01013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5704042607330609571
@@ -1872,7 +1872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5704042607450559785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2254,7 +2254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5704042608252151384
 Transform:
   m_ObjectHideFlags: 0
@@ -2469,7 +2469,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704042608590703149}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
