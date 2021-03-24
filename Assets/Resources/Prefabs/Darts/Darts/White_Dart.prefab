@@ -118,11 +118,17 @@ MonoBehaviour:
       isConstant: 0
       constantValue: 100
       variable: {fileID: 11400000, guid: be9816975d0834440bb3cf24825c4c8f, type: 2}
+    foundTarget:
+      isConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
   events:
     dartHitEvent: {fileID: 11400000, guid: 1f31c06e1d1df934f805bd1293e19e1a, type: 2}
   sounds:
     hitSound: {fileID: 8300000, guid: beefa60640b9e4ba8b2b43e7edddacea, type: 3}
-  pointToTrack: {fileID: 3712734304997032085}
+  gameObjects:
+    meshRenderer: {fileID: 9109248481457917920}
+    pointToTrack: {fileID: 3712734304997032085}
 --- !u!82 &7713524360525345346
 AudioSource:
   m_ObjectHideFlags: 0

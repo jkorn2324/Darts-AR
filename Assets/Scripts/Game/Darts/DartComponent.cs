@@ -20,6 +20,8 @@ namespace ModifiedObject.Scripts.Game
         public Utils.References.QuaternionReference targetRotation;
         [SerializeField]
         public Utils.References.FloatReference despawnCooldownTime;
+        [SerializeField]
+        public Utils.References.BooleanReference foundTarget;
     }
 
     [System.Serializable]
@@ -36,6 +38,15 @@ namespace ModifiedObject.Scripts.Game
         public AudioClip hitSound;
     }
 
+    [System.Serializable]
+    public struct DartGameObjects
+    {
+        [SerializeField]
+        public GameObject meshRenderer;
+        [SerializeField]
+        public GameObject pointToTrack;
+    }
+
     [RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
     public class DartComponent : Utils.EventContainerComponent, IDestroyable
     {
@@ -46,7 +57,7 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private DartSounds sounds;
         [SerializeField]
-        private GameObject pointToTrack;
+        private DartGameObjects gameObjects;
 
         private Rigidbody _rigidbody;
         private AudioSource _audioSource;
@@ -58,7 +69,7 @@ namespace ModifiedObject.Scripts.Game
         private bool _hitTarget = false;
 
         public Vector3 DartPosition
-            => this.pointToTrack != null ? this.pointToTrack.transform.position
+            => this.gameObjects.pointToTrack != null ? this.gameObjects.pointToTrack.transform.position
                 : this.transform.position;
 
         /// <summary>
@@ -86,12 +97,14 @@ namespace ModifiedObject.Scripts.Game
         {
             this.references.targetPosition.ChangedValueEvent += this.OnTargetChangedPosition;
             this.references.targetRotation.ChangedValueEvent += this.OnTargetChangedRotation;
+            this.references.foundTarget.ChangedValueEvent += this.OnFoundTarget;
         }
 
         protected override void UnHookEvents()
         {
             this.references.targetPosition.ChangedValueEvent -= this.OnTargetChangedPosition;
             this.references.targetRotation.ChangedValueEvent -= this.OnTargetChangedRotation;
+            this.references.foundTarget.ChangedValueEvent -= this.OnFoundTarget;
         }
 
         /// <summary>
@@ -183,6 +196,11 @@ namespace ModifiedObject.Scripts.Game
             hitOutcome.points = points;
             hitOutcome.throwOutcome = outcome;
             this.events.dartHitEvent?.CallEvent(hitOutcome);
+        }
+
+        private void OnFoundTarget(bool foundTarget)
+        {
+            this.gameObjects.meshRenderer?.SetActive(foundTarget);
         }
     }
 }
