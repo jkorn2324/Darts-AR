@@ -79,9 +79,10 @@ namespace ModifiedObject.Scripts.Utils
 
         public void Invoke(T param)
         {
-            foreach(var func in this._callbacks)
+            for(int i = this._callbacks.Count - 1; i >= 0; i--)
             {
-                func.Invoke(param);
+                var func = this._callbacks[i];
+                func?.Invoke(param);
             }
         }
 

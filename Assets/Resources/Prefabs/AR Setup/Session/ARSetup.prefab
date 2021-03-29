@@ -97,6 +97,10 @@ MonoBehaviour:
     isConstant: 0
     constantValue: 0
     variable: {fileID: 11400000, guid: e34a6f198c258f940a44984e7f66b797, type: 2}
+  foundTarget:
+    isConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
 --- !u!114 &4414793474178418200
 MonoBehaviour:
   m_ObjectHideFlags: 0

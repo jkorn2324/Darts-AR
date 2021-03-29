@@ -237,11 +237,13 @@ MonoBehaviour:
     isConstant: 0
     constantValue: {x: 0, y: 0}
     variable: {fileID: 11400000, guid: 73d88d10266ff20429ac66d51c07c8bc, type: 2}
-  centerPos:
+  cameraPos:
     isConstant: 0
     constantValue: {x: 0, y: 0, z: 0}
-    variable: {fileID: 11400000, guid: c6eb6e3ead9174b77bc52290fe6900db, type: 2}
+    variable: {fileID: 11400000, guid: e92d35108e64d4d30bef339f1e4cc421, type: 2}
   foundTarget:
     isConstant: 0
     constantValue: 0
     variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
+  spawnedPrefab: {fileID: 2407092449180041182, guid: 76e26590dbdbd42758b50214ad598edb,
+    type: 3}

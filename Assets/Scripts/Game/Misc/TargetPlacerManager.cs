@@ -12,6 +12,8 @@ namespace ModifiedObject.Scripts.Game.Misc
 
         [SerializeField]    
         private TargetPlacerReference targetPlacerReference; 
+        [SerializeField]
+        private Utils.References.BooleanReference foundTarget;
 
         private ARTrackedImageManager _trackedImageManager;
         private ARPlaneManager _planeManager;
@@ -26,11 +28,13 @@ namespace ModifiedObject.Scripts.Game.Misc
         protected override void HookEvents()
         {
             this.targetPlacerReference.TargetPlacerChanged += this.OnTargetPlacerChanged;
+            this.foundTarget.ChangedValueEvent += this.OnFoundTarget;
         }
 
         protected override void UnHookEvents()
         {
             this.targetPlacerReference.TargetPlacerChanged -= this.OnTargetPlacerChanged;
+            this.foundTarget.ChangedValueEvent -= this.OnFoundTarget;
         }
 
         private void OnTargetPlacerChanged(TargetPlacerType targetPlacer)
@@ -46,6 +50,11 @@ namespace ModifiedObject.Scripts.Game.Misc
                     this._planeManager.enabled = true;
                     break;
             }
+        }
+
+        private void OnFoundTarget(bool foundTarget)
+        {
+            this._planeManager.enabled = !foundTarget;        
         }
     }
 }

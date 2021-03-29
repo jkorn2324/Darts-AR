@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1475ff0793b32468730eec6a8f442b, type: 3}
   m_Name: Max Plane Size
   m_EditorClassIdentifier: 
-  originalValue: {x: 3, y: 3}
-  value: {x: 3, y: 3}
+  originalValue: {x: 0.5, y: 0.5}
+  value: {x: 0.5, y: 0.5}

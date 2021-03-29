@@ -14,10 +14,10 @@ namespace ModifiedObject.Scripts.Game
         [SerializeField]
         private Utils.References.Vector2Reference maxSize;
         [SerializeField]
-        private Utils.References.Vector3Reference centerPos;
-        [SerializeField]
         private Utils.References.BooleanReference foundTarget;
-        
+        [SerializeField]
+        private GameObject spawnedPrefab;
+
         private ARPlane _arPlane;
 
         /// <summary>
@@ -55,8 +55,9 @@ namespace ModifiedObject.Scripts.Game
             if(currentSize.x >= this.maxSize.Value.x
                 && currentSize.y >= this.maxSize.Value.y)
             {
-                this.centerPos.Value = this._arPlane.center;
-                this.foundTarget.Value = true;
+                GameObject prefab = Instantiate(this.spawnedPrefab);
+                prefab.transform.position = this._arPlane.center;
+                prefab.transform.rotation = this.transform.rotation;
             }
         }
     }
