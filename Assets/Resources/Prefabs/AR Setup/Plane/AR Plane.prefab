@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6444862771648036863}
   - component: {fileID: 6444862771648036862}
   - component: {fileID: 6444862771648036849}
+  - component: {fileID: -5849950515206424274}
   m_Layer: 0
   m_Name: AR Plane
   m_TagString: Untagged
@@ -220,3 +221,27 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 1
+--- !u!114 &-5849950515206424274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444862771648036848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7a3ee6127c1b04faab99013c218fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize:
+    isConstant: 0
+    constantValue: {x: 0, y: 0}
+    variable: {fileID: 11400000, guid: 73d88d10266ff20429ac66d51c07c8bc, type: 2}
+  centerPos:
+    isConstant: 0
+    constantValue: {x: 0, y: 0, z: 0}
+    variable: {fileID: 11400000, guid: c6eb6e3ead9174b77bc52290fe6900db, type: 2}
+  foundTarget:
+    isConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: d504c0076717140b69a656dafb1f1536, type: 2}
